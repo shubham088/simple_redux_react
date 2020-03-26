@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 //import {useSelector, useDispatch} from 'react-redux';
-import {increment, decrement} from './actions'
+import {increment, decrement, loginToggle} from './actions'
 import { connect } from "react-redux";
 
 //const counter = useSelector(state => state.counter);
@@ -28,6 +28,7 @@ class App extends Component {
           {'    '}
           <button onClick={this.props.decrement}>-</button>
          {this.props.log_info ? <h3>Hello</h3> : <h3>Shitttt!!</h3>}
+         <button onClick={this.props.loginToggle}>Toggle login</button>
         </div>
       </div>
     )
@@ -46,6 +47,9 @@ const mapDispatchToProps = dispatch => {
     },
     decrement : () =>{
       dispatch(decrement())
+    },
+    loginToggle : () => {
+      dispatch(loginToggle())
     }
   }
 
