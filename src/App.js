@@ -27,8 +27,10 @@ class App extends Component {
           <button onClick={this.props.increment}>+</button>
           {'    '}
           <button onClick={this.props.decrement}>-</button>
-         {this.props.log_info ? <h3>Hello</h3> : <h3>Shitttt!!</h3>}
-         <button onClick={this.props.loginToggle}>Toggle login</button>
+         {this.props.log_info ? <div><h3>Logged In..</h3>
+              <button onClick={this.props.loginToggle}>Sign out</button></div>
+                : <div><h3>Do Sign In..</h3><button onClick={this.props.loginToggle}>Login</button></div>}
+
         </div>
       </div>
     )
